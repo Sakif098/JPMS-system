@@ -26,10 +26,7 @@ export const PropertyCreate: React.FC<IResourceComponentsProps> = () => {
     height: "300px",
   };
   
-  const center = {
-    lat: 25,
-    lng: 55,
-  };
+  const [center, setCenter] = useState({ lat: 25, lng: 55 });
    
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
   
@@ -40,7 +37,7 @@ export const PropertyCreate: React.FC<IResourceComponentsProps> = () => {
   const lng = event.latLng.lng();
 
   setCoordinates({ lat, lng });
-  
+    setCenter({ lat, lng });
   formProps.form?.setFieldsValue({
     coordinate_x: lat,
     coordinate_y: lng,
